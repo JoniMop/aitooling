@@ -1,10 +1,12 @@
-import { Button } from "@/components/ui/button";
+//import { UserButton } from "@clerk/nextjs";
 
 const DashboardPage = () => {
-	return (
-			// <Button variant="destructive" size="lg">Click Me</Button>
+    return (
+        <div>
             <p>Dashboard Page (Protected)</p>
-	       )
+           {/*  <UserButton afterSignOutUrl="/" /> this was to show gmail profile and sign out from there  */}
+        </div>
+    )
 }
 
 export default DashboardPage;
