@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
-import { NavigationIcon } from "@/node_modules/lucide-react/dist/lucide-react";
+import { NavigationIcon } from "lucide-react";
 const DashboardLayout = ({
    children
 }: {
