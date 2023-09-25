@@ -1,44 +1,54 @@
 //import { UserButton } from "@clerk/nextjs";
 
 "use client"
-import {Card} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
-import {MessageSquare} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { MessageSquare } from "lucide-react";
 
 const tools = [
- {
-  label: "Conversation",
-  icon: MessageSquare,
-  color: "text-violet-500",
-  bgColor: "bg-violet-500/10",
-  href: "/conversation"
- }
+	{
+		label: "Conversation",
+		icon: MessageSquare,
+		color: "text-violet-500",
+		bgColor: "bg-violet-500/10",
+		href: "/conversation"
+	}
 ]
 const DashboardPage = () => {
-    return (
-        <div>
-	  <div className="mb-8 space-y-4 ">
-	    <h2 className="text-2x1 md:text-4x1 font-bold text-center">
-	     Explore de Power of AI
-	    </h2>
-	    <p className="text-muted-foreground font-light text-sm md:text-lg text-center">
-	      Chat with AI - Experience its power
-	    </p>
-	  </div>
-	  <div className="px-4 md:px-20 lg:px-32 space-y-4">
-             {tools.map((tool) => (
-	       <Card 
-	         key={tool.href}
-		 className="p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
-	       >
-
-	       </Card> 
-	     ))}	       
-	  </div>
-           {/* <p>Dashboard Page (Protected)</p> */}
-           {/*  <UserButton afterSignOutUrl="/" /> this was to show gmail profile and sign out from there  */}
-        </div>
-    )
+	return (
+		<div>
+			<div className="mb-8 space-y-4 ">
+				<h2 className="text-2x1 md:text-4x1 font-bold text-center">
+					Explore de Power of AI
+				</h2>
+				<p className="text-muted-foreground font-light text-sm md:text-lg text-center">
+					Chat with AI - Experience its power
+				</p>
+			</div>
+			<div className="px-4 md:px-20 lg:px-32 space-y-4">
+				{tools.map((tool) => (
+					<Card
+						key={tool.href}
+						className="p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
+					>
+						<div className="flex items-center gap-x-4">
+							<div className={cn("p-2 w-ft rounded-md", tool.bgColor)}>
+								<tool.icon className={cn("w-8 h-8", tool.color)} />
+							</div>
+							<div className="font-semibold">
+								{tool.label}
+							</div>
+						</div>
+						<ArrowRight />
+					</Card>
+				))}
+			</div>
+			{/* <p>Dashboard Page (Protected)</p> */}
+			{/*  <UserButton afterSignOutUrl="/" /> this was to show gmail profile and sign out from there  */}
+		</div>
+	)
 }
 
 export default DashboardPage;
